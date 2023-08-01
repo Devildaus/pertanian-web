@@ -20,14 +20,21 @@
         </div>
     @endif
 
-    <form action="{{ route('contact.store') }}" method="post">
+    <form action="{{ route('contacts.store') }}" method="post">
         @csrf
 
-        <label for="nama">Nama</label>
+        <label for="fname">Nama</label>
         <input type="text" id="nama" name="nama" placeholder="Nama Anda..">
 
-        <label for="email">Email</label>
+        <label for="lname">Email</label>
         <input type="text" id="email" name="email" placeholder="Email anda..">
+
+        <label for="jenis_kelamin">Jenis Kelamin</label>
+        <select id="jenis_kelamin" name="jenis_kelamin">
+            <option value="laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+        </select>
+
 
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>

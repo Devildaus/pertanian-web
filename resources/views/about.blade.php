@@ -71,7 +71,94 @@ html {
     display: block;
   }
 }
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
+
+main {
+  width: 70ch;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  --bg: hsl(140 20% 80%);
+  position: relative;
+  --clip: polygon(100% 30%, 0% 0, 0% 100%, 100% 70%);
+}
+
+.content {
+  padding: 1rem;
+}
+
+article:nth-of-type(even) {
+  color: hsl(0 0% 98%);
+  --bg: hsl(0 0% 10%);
+  --clip: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
+}
+
+article::after {
+  content: "";
+  position: absolute;
+  inset: -5rem;
+  background: var(--bg);
+  z-index: -1;
+  clip-path: var(--clip);
+}
+
+article:nth-of-type(even)::before,
+article:nth-of-type(even)::after {
+  inset: -8rem;
+  --clip: polygon(0 30%, 100% 0, 100% 100%, 15% 70%);
+}
+
+article::before {
+  content: "";
+  inset: -5rem;
+  position: absolute;
+  background: hsl(150 90% 50%);
+  z-index: -1;
+  clip-path: var(--clip);
+  scale: 1.02;
+  transform-origin: 0 0;
+}
+
+article:nth-of-type(even)::before {
+  transform-origin: 100% 0;
+}
 </style>
+<main>
+ 
+<article>
+  <img src="https://picsum.photos/300/300?random=1" alt="">
+  <div class="content">
+    <h2>Some Card</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque minus animi quod temporibus a, error voluptatibus cupiditate veniam nemo quam quidem tempore sapiente molestiae sequi odio qui? Molestiae, dolores eligendi!</p>
+  </div>
+</article>
+<article>
+  <div class="content">
+    <h2>Some Card</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit facilis repudiandae sit id maxime deleniti vel iure porro corporis unde. Aliquam temporibus soluta totam, incidunt accusamus praesentium consectetur molestiae autem!</p>
+  </div>
+  <img src="https://picsum.photos/300/300?random=2" alt="">
+</article>
+<article>
+  <img src="https://picsum.photos/300/300?random=3" alt="">
+  <div class="content">
+    <h2>Some Card</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae possimus voluptatibus rerum asperiores minima, nemo voluptates. Inventore, necessitatibus dicta. In, tempora aperiam enim omnis expedita sapiente atque cumque ea tenetur.</p>
+  </div>
+</article>
+</main>
 <div class="about-section">
   <h1>About Us Page</h1>
   <p>Some text about who we are and what we do.</p>
