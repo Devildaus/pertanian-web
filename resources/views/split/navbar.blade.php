@@ -2,7 +2,7 @@
     .navbar{
     background-color: white;
     font-family: 'Arbutus Slab';
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .navbar {
